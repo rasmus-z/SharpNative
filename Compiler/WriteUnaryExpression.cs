@@ -71,7 +71,7 @@ namespace SharpNative.Compiler
                 //				else
                 //				{
                 //					//TODO: cannot take addresses of structs in 32/64-bit mode and subtract them ... really weird d-bug ... leads to wrong math ... should we do a shift ?
-                ////				if (expression.OperatorToken.CSharpKind () == SyntaxKind.AmpersandToken) // Take address
+                ////				if (expression.OperatorToken.Kind () == SyntaxKind.AmpersandToken) // Take address
                 ////				{
                 ////					var memberAccess = expression.Operand as MemberAccessExpressionSyntax;
                 ////					var simpleName = expression.Operand as NameSyntax;

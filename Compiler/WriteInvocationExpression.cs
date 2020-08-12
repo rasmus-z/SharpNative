@@ -405,7 +405,7 @@ namespace SharpNative.Compiler
                 {
                 }
 
-                if (CSharpExtensions.CSharpKind(variable) == SyntaxKind.CollectionInitializerExpression)
+                if (variable.IsKind(SyntaxKind.CollectionInitializerExpression))
                     return;
                 var value = variable;
                 var initializerType = TypeProcessor.GetTypeInfo(value.Expression);

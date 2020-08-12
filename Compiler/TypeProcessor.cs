@@ -402,7 +402,7 @@ namespace SharpNative.Compiler
                 return "Array_T!(" + typeString + ")";
             }
 
-            if (typeSymbol.TypeKind == TypeKind.PointerType)
+            if (typeSymbol.TypeKind == TypeKind.Pointer)
             {
                 var pointer = typeSymbol as IPointerTypeSymbol;
                 return ConvertType(pointer.PointedAtType) + "*";

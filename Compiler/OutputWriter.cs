@@ -157,7 +157,7 @@ namespace SharpNative.Compiler
                     if (usedType.IsSubclassOf(Context.Instance.Type))
                         continue;
 
-                    if (usedType.TypeKind == TypeKind.PointerType) //No need to import pointer types
+                    if (usedType.TypeKind == TypeKind.Pointer) //No need to import pointer types
                         continue;
 
                     if (!Imports.Contains(usedType)) //TODO: change this when "Assemblies" are implemented

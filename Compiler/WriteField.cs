@@ -147,8 +147,8 @@ namespace SharpNative.Compiler
                 {
 					writer.Write(String.Format(" = cast({0})", typeString));
 
-                    if (CSharpExtensions.CSharpKind(initializerOpt.Value) == SyntaxKind.CollectionInitializerExpression ||
-                        CSharpExtensions.CSharpKind(initializerOpt.Value) == SyntaxKind.ArrayInitializerExpression)
+                    if (CSharpExtensions.IsKind(initializerOpt.Value, SyntaxKind.CollectionInitializerExpression) ||
+                        CSharpExtensions.IsKind(initializerOpt.Value, SyntaxKind.ArrayInitializerExpression))
                     {
 //                        writer.Write("gc::gc_ptr< " + typeStringNoPtr + " >(");
                         writer.Write(" new " + typeString + " (");
@@ -185,8 +185,8 @@ namespace SharpNative.Compiler
 
                     staticWriter.Write(" = ");
 
-                    if (CSharpExtensions.CSharpKind(initializerOpt.Value) == SyntaxKind.CollectionInitializerExpression ||
-                        CSharpExtensions.CSharpKind(initializerOpt.Value) == SyntaxKind.ArrayInitializerExpression)
+                    if (CSharpExtensions.IsKind(initializerOpt.Value, SyntaxKind.CollectionInitializerExpression) ||
+                        CSharpExtensions.IsKind(initializerOpt.Value, SyntaxKind.ArrayInitializerExpression))
                     {
                         staticWriter.Write("new " + typeStringNoPtr + " (");
 

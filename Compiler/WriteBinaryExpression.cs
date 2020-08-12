@@ -210,7 +210,7 @@ namespace SharpNative.Compiler
                 if (rightnull)
                 {
 
-                    switch (operatorToken.CSharpKind())
+                    switch (operatorToken.Kind())
                     {
                         case SyntaxKind.EqualsEqualsToken:
                             writer.Write("");
@@ -235,7 +235,7 @@ namespace SharpNative.Compiler
                 {
                     //                    writer.Write("null");
                     //
-                    //                    switch (operatorToken.CSharpKind())
+                    //                    switch (operatorToken.Kind())
                     //                    {
                     //                        case SyntaxKind.EqualsEqualsToken:
                     //                            writer.Write(" is ");
@@ -252,7 +252,7 @@ namespace SharpNative.Compiler
                     //                    Core.Write(writer, rightExpression);
                     //
                     //                    return;
-                    switch (operatorToken.CSharpKind())
+                    switch (operatorToken.Kind())
                     {
                         case SyntaxKind.EqualsEqualsToken:
                             writer.Write("");
@@ -312,8 +312,8 @@ namespace SharpNative.Compiler
                 }
             }
 
-            if (operatorToken.CSharpKind() == SyntaxKind.PlusEqualsToken ||
-                operatorToken.CSharpKind() == SyntaxKind.MinusEqualsToken)
+            if (operatorToken.Kind() == SyntaxKind.PlusEqualsToken ||
+                operatorToken.Kind() == SyntaxKind.MinusEqualsToken)
             {
                 var isname = rightExpression is NameSyntax;
 
@@ -368,7 +368,7 @@ namespace SharpNative.Compiler
                 {
                     writer.Write("/*value type cannot be null*/");
                     Core.Write(writer, leftExpression);
-                    switch (operatorToken.CSharpKind())
+                    switch (operatorToken.Kind())
                     {
                         case SyntaxKind.EqualsEqualsToken:
                             writer.Write("!=");
@@ -386,9 +386,9 @@ namespace SharpNative.Compiler
                 else
                 {
                     Core.Write(writer, leftExpression);
-                    if (operatorToken.CSharpKind() == SyntaxKind.EqualsEqualsToken)
+                    if (operatorToken.Kind() == SyntaxKind.EqualsEqualsToken)
                         writer.Write(" is ");
-                    else if (operatorToken.CSharpKind() == SyntaxKind.ExclamationEqualsToken)
+                    else if (operatorToken.Kind() == SyntaxKind.ExclamationEqualsToken)
                         writer.Write(" !is ");
                     else
                         writer.Write(operatorToken.ToString());
