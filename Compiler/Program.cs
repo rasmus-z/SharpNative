@@ -12,6 +12,7 @@ using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -21,6 +22,7 @@ using System.Xml;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeDom.Providers.DotNetCompilerPlatform;
 using Microsoft.CSharp;
 using Microsoft.CSharp.RuntimeBinder;
 using SharpNative.Compiler.DlangAst;
@@ -546,7 +548,7 @@ namespace SharpNative.Compiler
                     AssemblyMetadata.CreateFromFile(typeof(CSharpCodeProvider).Assembly.Location).GetReference(),
                     AssemblyMetadata.CreateFromFile(typeof(Enumerable).Assembly.Location).GetReference(),
 
-                    AssemblyMetadata.CreateFromFile(typeof(HttpRequest).Assembly.Location).GetReference(),
+                    AssemblyMetadata.CreateFromFile(typeof(HttpClient).Assembly.Location).GetReference(),
                     AssemblyMetadata.CreateFromFile(typeof(CSharpCodeProvider).Assembly.Location).GetReference()
                 }, new CSharpCompilationOptions(OutputKind.ConsoleApplication, allowUnsafe: true));
 
